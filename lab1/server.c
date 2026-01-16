@@ -7,6 +7,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <string.h>
+
 
 void error(char *msg)
 {
@@ -16,7 +18,7 @@ void error(char *msg)
 
 int main(int argc, char *argv[])
 {
-     int sockfd, newsockfd, portno, clilen;
+     int sockfd, newsockfd, portno, clilen, num;
      char buffer[256];
      struct sockaddr_in serv_addr, cli_addr;
      int n;
@@ -40,11 +42,25 @@ int main(int argc, char *argv[])
      newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
      if (newsockfd < 0) 
           error("ERROR on accept");
+
+     num = 0;
+     while (1){
      bzero(buffer,256);
      n = read(newsockfd,buffer,255);
      if (n < 0) error("ERROR reading from socket");
-     printf("Here is the message: %s\n",buffer);
-     n = write(newsockfd,"I got your message",18);
+     if (n==0) {printf("Client disconnected.\n"); break;}
+     num ++;
+     printf("Here is NO.%d message from client: %s\n", num, buffer);
+     if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;
+     printf("Server reply (NO.%d): ",num);
+     fflush(stdout);
+     bzero(buffer, 256);
+     if (!fgets(buffer, 255, stdin)) break;
+     n = write(newsockfd, buffer, strlen(buffer));
      if (n < 0) error("ERROR writing to socket");
+     if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;}
+     
+     close(newsockfd);
+     close(sockfd);
      return 0; 
 }
