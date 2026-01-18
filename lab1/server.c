@@ -8,7 +8,9 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <string.h>
-
+#include <signal.h>
+#include <sys/wait.h>
+#include <arpa/inet.h>
 
 void error(char *msg)
 {
@@ -18,7 +20,7 @@ void error(char *msg)
 
 int main(int argc, char *argv[])
 {
-     int sockfd, newsockfd, portno, clilen, num;
+     int sockfd, newsockfd, portno, clilen, num, conn_id = 0;
      char buffer[256];
      struct sockaddr_in serv_addr, cli_addr;
      int n;
@@ -38,29 +40,34 @@ int main(int argc, char *argv[])
               sizeof(serv_addr)) < 0) 
               error("ERROR on binding");
      listen(sockfd,5);
+     signal(SIGCHLD, SIG_IGN);
+     
+     while (1){
+    
      clilen = sizeof(cli_addr);
      newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
      if (newsockfd < 0) 
           error("ERROR on accept");
-
+     conn_id++;
+     pid_t pid =fork();
+     if (pid <0 ) error("ERROR on fork");
+     if (pid ==0) {
+     close (sockfd);
      num = 0;
      while (1){
      bzero(buffer,256);
      n = read(newsockfd,buffer,255);
      if (n < 0) error("ERROR reading from socket");
-     if (n==0) {printf("Client disconnected.\n"); break;}
+     if (n==0) {printf("[conn=%d]Client disconnected.\n",conn_id); break;}
+     buffer[n] = '\0';
      num ++;
-     printf("Here is NO.%d message from client: %s\n", num, buffer);
+     printf("[conn=%d]Here is NO.%d message from client: %s\n", conn_id,num, buffer);
      if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;
-     printf("Server reply (NO.%d): ",num);
-     fflush(stdout);
-     bzero(buffer, 256);
-     if (!fgets(buffer, 255, stdin)) break;
-     n = write(newsockfd, buffer, strlen(buffer));
+     n = write(newsockfd,"I got your message\n",18);
      if (n < 0) error("ERROR writing to socket");
      if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;}
      
      close(newsockfd);
-     close(sockfd);
+     exit(0);}else{close(newsockfd);}}
      return 0; 
 }
