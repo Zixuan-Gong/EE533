@@ -1,16 +1,12 @@
-/* A simple server in the internet domain using TCP
-   The port number is passed as an argument */
 #include <stdio.h>
 #include <stdlib.h>     
+#include <string.h>    
 #include <strings.h>   
-#include <unistd.h>    
+#include <unistd.h>     
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <string.h>
-#include <signal.h>
-#include <sys/wait.h>
-#include <arpa/inet.h>
+#include <netdb.h>
 
 void error(char *msg)
 {
@@ -20,54 +16,53 @@ void error(char *msg)
 
 int main(int argc, char *argv[])
 {
-     int sockfd, newsockfd, portno, clilen, num, conn_id = 0;
-     char buffer[256];
-     struct sockaddr_in serv_addr, cli_addr;
-     int n;
-     if (argc < 2) {
-         fprintf(stderr,"ERROR, no port provided\n");
-         exit(1);
-     }
-     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-     if (sockfd < 0) 
+    int sockfd, portno, n, num;
+
+    struct sockaddr_in serv_addr;
+    struct hostent *server;
+
+    char buffer[256];
+    if (argc < 3) {
+       fprintf(stderr,"usage %s hostname port\n", argv[0]);
+       exit(0);
+    }
+    portno = atoi(argv[2]);
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0) 
         error("ERROR opening socket");
-     bzero((char *) &serv_addr, sizeof(serv_addr));
-     portno = atoi(argv[1]);
-     serv_addr.sin_family = AF_INET;
-     serv_addr.sin_addr.s_addr = INADDR_ANY;
-     serv_addr.sin_port = htons(portno);
-     if (bind(sockfd, (struct sockaddr *) &serv_addr,
-              sizeof(serv_addr)) < 0) 
-              error("ERROR on binding");
-     listen(sockfd,5);
-     signal(SIGCHLD, SIG_IGN);
-     
-     while (1){
+    server = gethostbyname(argv[1]);
+    if (server == NULL) {
+        fprintf(stderr,"ERROR, no such host\n");
+        exit(0);
+    }
+    bzero((char *) &serv_addr, sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    bcopy((char *)server->h_addr, 
+         (char *)&serv_addr.sin_addr.s_addr,
+         server->h_length);
+    serv_addr.sin_port = htons(portno);
+    if (connect(sockfd,(struct sockaddr *)&serv_addr,sizeof(serv_addr)) < 0) 
+        error("ERROR connecting");
+        
+    printf("Connected. Chat mode: you send first. Type quit to exit.\n ");
     
-     clilen = sizeof(cli_addr);
-     newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
-     if (newsockfd < 0) 
-          error("ERROR on accept");
-     conn_id++;
-     pid_t pid =fork();
-     if (pid <0 ) error("ERROR on fork");
-     if (pid ==0) {
-     close (sockfd);
-     num = 0;
-     while (1){
-     bzero(buffer,256);
-     n = read(newsockfd,buffer,255);
-     if (n < 0) error("ERROR reading from socket");
-     if (n==0) {printf("[conn=%d]Client disconnected.\n",conn_id); break;}
-     buffer[n] = '\0';
-     num ++;
-     printf("[conn=%d]Here is NO.%d message from client: %s\n", conn_id,num, buffer);
-     if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;
-     n = write(newsockfd,"I got your message\n",18);
-     if (n < 0) error("ERROR writing to socket");
-     if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;}
-     
-     close(newsockfd);
-     exit(0);}else{close(newsockfd);}}
-     return 0; 
+    num=0;
+    while(1){
+    bzero(buffer,256);
+    num ++;
+    if (!fgets(buffer, 255, stdin)) break;
+    if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;
+    printf("Here is NO.%d message: %s", num, buffer);
+    n = write(sockfd,buffer,strlen(buffer));
+    if (n < 0) 
+         error("ERROR writing to socket");
+    bzero(buffer,256);
+    n = read(sockfd,buffer,255);
+    if (n < 0) 
+         error("ERROR reading from socket");
+    if(n==0) {printf("Server disconnected.\n"); break;}
+    printf("Here is NO.%d message from server: %s\n", num, buffer);
+    if (!strcmp(buffer, "quit\n") || !strcmp(buffer, "exit\n")) break;}
+    close(sockfd);
+    return 0;
 }
