@@ -1,0 +1,4 @@
+vhdl work "add_1b.vhf"
+vhdl work "add_8b.vhf"
+vhdl work "add32.vhf"
+vhdl work "tb_add32.vhw"

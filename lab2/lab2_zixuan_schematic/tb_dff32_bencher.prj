@@ -1,0 +1,3 @@
+vhdl work "dff8.vhf"
+vhdl work "DFF16.vhf"
+vhdl work "DFF32.vhf"

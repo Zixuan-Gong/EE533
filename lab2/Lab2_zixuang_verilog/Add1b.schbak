@@ -1,0 +1,126 @@
+VERSION 6
+BEGIN SCHEMATIC
+    BEGIN ATTR DeviceFamilyName "aspartan2e"
+        DELETE all:0
+        EDITNAME all:0
+        EDITTRAIT all:0
+    END ATTR
+    BEGIN NETLIST
+        SIGNAL XLXN_1
+        SIGNAL A
+        SIGNAL B
+        SIGNAL C
+        SIGNAL S
+        SIGNAL Cout
+        PORT Input A
+        PORT Input B
+        PORT Input C
+        PORT Output S
+        PORT Output Cout
+        BEGIN BLOCKDEF xor2
+            TIMESTAMP 2000 1 1 10 10 10
+            LINE N 0 -64 64 -64 
+            LINE N 0 -128 60 -128 
+            LINE N 256 -96 208 -96 
+            ARC N -40 -152 72 -40 48 -48 44 -144 
+            ARC N -24 -152 88 -40 64 -48 64 -144 
+            LINE N 128 -144 64 -144 
+            LINE N 128 -48 64 -48 
+            ARC N 44 -144 220 32 208 -96 128 -144 
+            ARC N 44 -224 220 -48 128 -48 208 -96 
+        END BLOCKDEF
+        BEGIN BLOCKDEF and2
+            TIMESTAMP 2000 1 1 10 10 10
+            LINE N 0 -64 64 -64 
+            LINE N 0 -128 64 -128 
+            LINE N 256 -96 192 -96 
+            ARC N 96 -144 192 -48 144 -48 144 -144 
+            LINE N 144 -48 64 -48 
+            LINE N 64 -144 144 -144 
+            LINE N 64 -48 64 -144 
+        END BLOCKDEF
+        BEGIN BLOCKDEF or2
+            TIMESTAMP 2000 1 1 10 10 10
+            LINE N 0 -64 64 -64 
+            LINE N 0 -128 64 -128 
+            LINE N 256 -96 192 -96 
+            ARC N 28 -224 204 -48 112 -48 192 -96 
+            ARC N -40 -152 72 -40 48 -48 48 -144 
+            LINE N 112 -144 48 -144 
+            ARC N 28 -144 204 32 192 -96 112 -144 
+            LINE N 112 -48 48 -48 
+        END BLOCKDEF
+        BEGIN BLOCK XLXI_1 xor2
+            PIN I0 B
+            PIN I1 A
+            PIN O
+        END BLOCK
+        BEGIN BLOCK XLXI_2 xor2
+            PIN I0 C
+            PIN I1
+            PIN O S
+        END BLOCK
+        BEGIN BLOCK XLXI_3 and2
+            PIN I0
+            PIN I1
+            PIN O
+        END BLOCK
+        BEGIN BLOCK XLXI_4 and2
+            PIN I0
+            PIN I1
+            PIN O XLXN_1
+        END BLOCK
+        BEGIN BLOCK XLXI_5 or2
+            PIN I0
+            PIN I1 XLXN_1
+            PIN O Cout
+        END BLOCK
+    END NETLIST
+    BEGIN SHEET 1 3520 2720
+        INSTANCE XLXI_1 1312 976 R0
+        INSTANCE XLXI_2 1728 1008 R0
+        LINE N 1728 880 1568 880 
+        LINE N 1984 912 2168 912 
+        LINE N 1620 880 1620 1056 
+        LINE N 1620 1056 1680 1056 
+        LINE N 1568 944 1568 1120 
+        LINE N 1568 1120 1680 1120 
+        LINE N 1216 848 1216 1188 
+        INSTANCE XLXI_3 1520 1328 R0
+        LINE N 1216 1200 1576 1200 
+        LINE N 1216 1200 1216 1184 
+        LINE N 1520 1264 1212 1264 
+        LINE N 1216 1200 1216 1264 
+        INSTANCE XLXI_4 1632 1184 R0
+        BEGIN BRANCH XLXN_1
+            WIRE 1888 1088 1920 1088
+        END BRANCH
+        INSTANCE XLXI_5 1920 1216 R0
+        LINE N 1772 1232 1920 1232 
+        LINE N 1920 1152 1920 1232 
+        BEGIN BRANCH A
+            WIRE 976 848 1296 848
+            WIRE 1296 848 1312 848
+        END BRANCH
+        BEGIN BRANCH B
+            WIRE 976 912 1296 912
+            WIRE 1296 912 1312 912
+        END BRANCH
+        BEGIN BRANCH C
+            WIRE 976 944 1712 944
+            WIRE 1712 944 1728 944
+        END BRANCH
+        BEGIN BRANCH S
+            WIRE 1984 912 2000 912
+            WIRE 2000 912 2192 912
+        END BRANCH
+        BEGIN BRANCH Cout
+            WIRE 2176 1120 2208 1120
+        END BRANCH
+        IOMARKER 976 944 C R180 28
+        IOMARKER 976 912 B R180 28
+        IOMARKER 976 848 A R180 28
+        IOMARKER 2192 912 S R0 28
+        IOMARKER 2208 1120 Cout R0 28
+    END SHEET
+END SCHEMATIC

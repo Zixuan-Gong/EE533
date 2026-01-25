@@ -1,0 +1,3 @@
+MODULE tb_32eqa
+SUBMODULE and_32bit
+INSTANCE UUT

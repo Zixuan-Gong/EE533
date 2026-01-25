@@ -1,0 +1,152 @@
+Determining compilation order of HDL files
+Analyzing VHDL file add_1b.vhf
+Restoring VHDL parse-tree ieee.std_logic_1164 from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/ieee/std_logic_1164.vdb
+Restoring VHDL parse-tree std.standard from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/std/standard.vdb
+Restoring VHDL parse-tree ieee.numeric_std from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/ieee/numeric_std.vdb
+Restoring VHDL parse-tree unisim.vcomponents from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Analyzing VHDL file dff8.vhf
+Analyzing VHDL file add_8b.vhf
+Analyzing VHDL file MUX_32b.vhf
+Analyzing VHDL file inv32.vhf
+Analyzing VHDL file DFF16.vhf
+Analyzing VHDL file buffer31.vhf
+Analyzing VHDL file and_32bit.vhf
+Analyzing VHDL file add32.vhf
+Analyzing VHDL file DFF32.vhf
+Analyzing VHDL file DFF3.vhf
+Analyzing VHDL file Alu32_sch.vhf
+Analyzing VHDL file ALU32DFF.vhf
+Analyzing VHDL file tb_alu32dff.vhw
+Restoring VHDL parse-tree ieee.std_logic_textio from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/ieee/std_logic_textio.vdb
+Restoring VHDL parse-tree std.textio from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/std/textio.vdb
+Restoring VHDL parse-tree ieee.std_logic_arith from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/ieee/std_logic_arith.vdb
+Restoring VHDL parse-tree ieee.std_logic_unsigned from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/ieee/std_logic_unsigned.vdb
+Saving VHDL parse-tree work.add_1b into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/add_1b.vdb
+Saving VHDL parse-tree work.dff8 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/dff8.vdb
+Saving VHDL parse-tree work.add_8b into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/add_8b.vdb
+Saving VHDL parse-tree work.m2_1_mxilinx_mux_32b into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/m2_1_mxilinx_mux_32b
+.vdb
+Saving VHDL parse-tree work.mux_32b into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/mux_32b.vdb
+Saving VHDL parse-tree work.inv16_mxilinx_inv32 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/inv16_mxilinx_inv32.
+vdb
+Saving VHDL parse-tree work.inv32 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/inv32.vdb
+Saving VHDL parse-tree work.dff16 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/dff16.vdb
+Saving VHDL parse-tree work.buffer31 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/buffer31.vdb
+Saving VHDL parse-tree work.or16_mxilinx_and_32bit into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/or16_mxilinx_and_32b
+it.vdb
+Saving VHDL parse-tree work.and_32bit into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/and_32bit.vdb
+Saving VHDL parse-tree work.add32 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/add32.vdb
+Saving VHDL parse-tree work.dff32 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/dff32.vdb
+Saving VHDL parse-tree work.dff3 into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/dff3.vdb
+Saving VHDL parse-tree work.m2_1_mxilinx_alu32_sch into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/m2_1_mxilinx_alu32_s
+ch.vdb
+Saving VHDL parse-tree work.alu32_sch into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/alu32_sch.vdb
+Saving VHDL parse-tree work.alu32dff into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/alu32dff.vdb
+Saving VHDL parse-tree work.tb_alu32dff into c:/documents and
+settings/student/desktop/lab2_zixuang/lab2_zixuan/isim/work/tb_alu32dff.vdb
+Starting static elaboration
+WARNING:HDLCompiler:746 - "N:/K.31/rtf/vhdl/src/ieee/numeric_std.vhd" Line 867.
+   Range is empty (null range)
+WARNING:HDLCompiler:746 - "N:/K.31/rtf/vhdl/src/ieee/numeric_std.vhd" Line 868.
+   Range is empty (null range)
+Restoring VHDL parse-tree unisim.and2 from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.or2 from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.xor2 from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.and2b1 from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.inv from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.buf from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.gnd from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.muxcy_l from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.fmap from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.nor4 from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.muxcy from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.vcc from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.fd from
+c:/xilinx/10.1/ise/vhdl/hdp/nt/unisim/unisim.vdbl
+Completed static elaboration
+Fuse Memory Usage: 62344 Kb
+Fuse CPU Usage: 311 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package numeric_std from library ieee
+Using precompiled package textio from library std
+Using precompiled package std_logic_textio from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Compiling package vcomponents
+Compiling architecture and2_v of entity and2 [and2_default]
+Compiling architecture or2_v of entity or2 [or2_default]
+Compiling architecture xor2_v of entity xor2 [xor2_default]
+Compiling architecture behavioral of entity add_1b [add_1b_default]
+Compiling architecture behavioral of entity add_8b [add_8b_default]
+Compiling architecture behavioral of entity add32 [add32_default]
+Compiling architecture and2b1_v of entity and2b1 [and2b1_default]
+Compiling architecture behavioral of entity m2_1_mxilinx_mux_32b
+[m2_1_mxilinx_mux_32b_default]
+Compiling architecture behavioral of entity mux_32b [mux_32b_default]
+Compiling architecture inv_v of entity inv [inv_default]
+Compiling architecture behavioral of entity inv16_mxilinx_inv32
+[inv16_mxilinx_inv32_default]
+Compiling architecture behavioral of entity inv32 [inv32_default]
+Compiling architecture buf_v of entity buf [buf_default]
+Compiling architecture behavioral of entity buffer31 [buffer31_default]
+Compiling architecture gnd_v of entity gnd [gnd_default]
+Compiling architecture muxcy_l_v of entity muxcy_l [muxcy_l_default]
+Compiling architecture fmap_v of entity fmap [fmap_default]
+Compiling architecture nor4_v of entity nor4 [nor4_default]
+Compiling architecture muxcy_v of entity muxcy [muxcy_default]
+Compiling architecture vcc_v of entity vcc [vcc_default]
+Compiling architecture behavioral of entity or16_mxilinx_and_32bit
+[or16_mxilinx_and_32bit_default]
+Compiling architecture behavioral of entity and_32bit [and_32bit_default]
+Compiling architecture behavioral of entity m2_1_mxilinx_alu32_sch
+[m2_1_mxilinx_alu32_sch_default]
+Compiling architecture behavioral of entity alu32_sch [alu32_sch_default]
+Compiling architecture fd_v of entity fd [\FD('0')\]
+Compiling architecture behavioral of entity dff8 [dff8_default]
+Compiling architecture behavioral of entity dff16 [dff16_default]
+Compiling architecture behavioral of entity dff32 [dff32_default]
+Compiling architecture behavioral of entity dff3 [dff3_default]
+Compiling architecture behavioral of entity alu32dff [alu32dff_default]
+Compiling architecture testbench_arch of entity tb_alu32dff
+Compiled 69 VHDL Units
+Built simulation executable tb_alu32dff_isim_beh.exe
+Fuse Memory Usage: 63628 Kb
+Fuse CPU Usage: 421 ms

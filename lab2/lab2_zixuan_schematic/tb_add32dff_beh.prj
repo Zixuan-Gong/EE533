@@ -1,0 +1,8 @@
+vhdl work "dff8.vhf"
+vhdl work "add_1b.vhf"
+vhdl work "DFF16.vhf"
+vhdl work "add_8b.vhf"
+vhdl work "DFF32.vhf"
+vhdl work "add32.vhf"
+vhdl work "add32dff.vhf"
+vhdl work "tb_add32dff.vhw"

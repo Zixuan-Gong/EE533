@@ -1,0 +1,48 @@
+Command line:
+   ./tb_alu32dff_isim_beh.exe
+     -intstyle  ise
+     -ipchost  localhost
+     -ipcport  1059
+
+Sat Jan 24 16:35:56 2026
+
+Total Line Count : 557
+
+ Elaboration Time: 0.015625 sec
+
+ Current Memory Usage: 146.887 Meg
+
+ Total Signals          : 4632
+ Total Nets             : 1109
+ Total Signal Drivers   : 1024
+ Total Blocks           : 1304
+ Total Primitive Blocks : 1028
+ Total Processes        : 1022
+ Total Traceable Variables  : 120
+ Total Scalar Nets and Variables : 2233
+ntrace select -o on -n /tb_alu32dff/ai 
+ntrace select -o on -n /tb_alu32dff/bi 
+ntrace select -o on -n /tb_alu32dff/clk 
+ntrace select -o on -n /tb_alu32dff/op 
+ntrace select -o on -n /tb_alu32dff/s 
+ntrace select -o on -n /tb_alu32dff/period 
+ntrace select -o on -n /tb_alu32dff/duty_cycle 
+ntrace select -o on -n /tb_alu32dff/offset 
+ntrace start 
+isimrun 1000 ns 
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+isimrun 1000 ns 
+isimrun 1000 ns 
+isimrun 1000 ns 
+isimrun 1000 ns 
+isimrun 1000 ns 
+isimrun 1000 ns 
+isimrun 1000 ns 
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 156.336 Meg
+
+Sat Jan 24 16:54:35 2026
+

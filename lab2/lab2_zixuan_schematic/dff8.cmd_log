@@ -1,0 +1,5 @@
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.sch" dff8.vhf
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.sch" DFF8.vhf
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.sch" DFF8.vhf
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.sch" DFF8.vhf
+sch2vhdl -intstyle ise -family virtex2p -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.sch" DFF8.vhf

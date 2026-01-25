@@ -1,0 +1,10 @@
+xst -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -ifn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Alu32.xst" -ofn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Alu32.syr"
+xst -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -ifn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Alu32.xst" -ofn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Alu32.syr"
+ngdbuild -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xa2s50e-tq144-6 "Alu32.ngc" Alu32.ngd
+map -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -p xa2s50e-tq144-6 -cm area -pr off -k 4 -c 100 -tx off -o Alu32_map.ncd Alu32.ngd Alu32.pcf
+map -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -p xa2s50e-tq144-6 -cm area -pr off -k 4 -c 100 -tx off -o Alu32_map.ncd Alu32.ngd Alu32.pcf
+xst -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -ifn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Alu32.xst" -ofn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Alu32.syr"
+ngdbuild -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "Alu32.ngc" Alu32.ngd
+map -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o Alu32_map.ncd Alu32.ngd Alu32.pcf
+par -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -w -intstyle ise -ol std -t 1 Alu32_map.ncd Alu32.ncd Alu32.pcf
+trce -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuang.ise" -intstyle ise -e 3 -s 6 -xml Alu32 Alu32.ncd -o Alu32.twr Alu32.pcf

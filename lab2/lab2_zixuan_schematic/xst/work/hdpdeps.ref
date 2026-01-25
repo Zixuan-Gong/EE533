@@ -1,0 +1,135 @@
+V3 77
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add32.vhf" 2026/01/24.16:59:37 K.31
+EN work/add32 1769303077 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add32.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/add32/BEHAVIORAL 1769303078 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add32.vhf" \
+      EN work/add32 1769303077 CP add_8b
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add_1b.vhf" 2026/01/24.16:59:31 K.31
+EN work/add_1b 1769303069 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add_1b.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/add_1b/BEHAVIORAL 1769303070 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add_1b.vhf" \
+      EN work/add_1b 1769303069 CP AND2 CP OR2 CP XOR2
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add_8b.vhf" 2026/01/24.16:59:35 K.31
+EN work/add_8b 1769303073 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add_8b.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/add_8b/BEHAVIORAL 1769303074 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/add_8b.vhf" \
+      EN work/add_8b 1769303073 CP add_1b
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.vhf" 2026/01/24.16:59:33 K.31
+EN work/ALU32DFF 1769303101 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/ALU32DFF/BEHAVIORAL 1769303102 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.vhf" \
+      EN work/ALU32DFF 1769303101 CP Alu32_sch CP DFF32 CP DFF3
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Alu32_sch.vhf" 2026/01/24.16:59:32 K.31
+EN work/M2_1_MXILINX_Alu32_sch 1769303093 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Alu32_sch.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/M2_1_MXILINX_Alu32_sch/BEHAVIORAL 1769303094 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Alu32_sch.vhf" \
+      EN work/M2_1_MXILINX_Alu32_sch 1769303093 CP AND2B1 CP OR2 CP AND2
+EN work/Alu32_sch 1769303095 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Alu32_sch.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/Alu32_sch/BEHAVIORAL 1769303096 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Alu32_sch.vhf" \
+      EN work/Alu32_sch 1769303095 CP add32 CP MUX_32b CP inv32 CP buffer31 CP GND \
+      CP and_32bit CP M2_1_MXILINX_Alu32_sch
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/and_32bit.vhf" 2026/01/24.16:59:34 K.31
+EN work/OR16_MXILINX_and_32bit 1769303089 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/and_32bit.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/OR16_MXILINX_and_32bit/BEHAVIORAL 1769303090 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/and_32bit.vhf" \
+      EN work/OR16_MXILINX_and_32bit 1769303089 CP MUXCY_L CP FMAP CP NOR4 CP MUXCY \
+      CP VCC CP GND
+EN work/and_32bit 1769303091 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/and_32bit.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/and_32bit/BEHAVIORAL 1769303092 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/and_32bit.vhf" \
+      EN work/and_32bit 1769303091 CP XOR2 CP OR16_MXILINX_and_32bit CP OR2 CP INV
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/buffer31.vhf" 2026/01/24.16:59:33 K.31
+EN work/buffer31 1769303087 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/buffer31.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/buffer31/BEHAVIORAL 1769303088 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/buffer31.vhf" \
+      EN work/buffer31 1769303087 CP BUF
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF16.vhf" 2026/01/24.16:59:32 K.31
+EN work/DFF16 1769303075 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF16.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/DFF16/BEHAVIORAL 1769303076 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF16.vhf" \
+      EN work/DFF16 1769303075 CP DFF8
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF3.vhf" 2026/01/24.16:59:34 K.31
+EN work/DFF3 1769303099 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF3.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/DFF3/BEHAVIORAL 1769303100 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF3.vhf" \
+      EN work/DFF3 1769303099 CP FD
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF32.vhf" 2026/01/24.16:59:36 K.31
+EN work/DFF32 1769303097 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF32.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/DFF32/BEHAVIORAL 1769303098 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF32.vhf" \
+      EN work/DFF32 1769303097 CP DFF16
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.vhf" 2026/01/24.16:59:36 K.31
+EN work/dff8 1769303071 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/dff8/BEHAVIORAL 1769303072 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/dff8.vhf" \
+      EN work/dff8 1769303071 CP FD
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/inv32.vhf" 2026/01/24.16:59:36 K.31
+EN work/INV16_MXILINX_inv32 1769303083 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/inv32.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/INV16_MXILINX_inv32/BEHAVIORAL 1769303084 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/inv32.vhf" \
+      EN work/INV16_MXILINX_inv32 1769303083 CP INV
+EN work/inv32 1769303085 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/inv32.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/inv32/BEHAVIORAL 1769303086 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/inv32.vhf" \
+      EN work/inv32 1769303085 CP INV16_MXILINX_inv32
+FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/MUX_32b.vhf" 2026/01/24.16:59:33 K.31
+EN work/M2_1_MXILINX_MUX_32b 1769303079 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/MUX_32b.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/M2_1_MXILINX_MUX_32b/BEHAVIORAL 1769303080 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/MUX_32b.vhf" \
+      EN work/M2_1_MXILINX_MUX_32b 1769303079 CP AND2B1 CP OR2 CP AND2
+EN work/MUX_32b 1769303081 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/MUX_32b.vhf" \
+      PB ieee/std_logic_1164 1200023565 PH ieee/NUMERIC_STD 1200023568 LB UNISIM \
+      PH unisim/VCOMPONENTS 1200023571
+AR work/MUX_32b/BEHAVIORAL 1769303082 \
+      FL "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/MUX_32b.vhf" \
+      EN work/MUX_32b 1769303081 CP M2_1_MXILINX_MUX_32b

@@ -1,0 +1,2 @@
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/tb_add32.sch" tb_add32.vhf
+sch2vhdl -intstyle ise -family virtex2p -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/tb_add32.sch" tb_add32.vhf

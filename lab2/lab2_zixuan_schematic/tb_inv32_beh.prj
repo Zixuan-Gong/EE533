@@ -1,0 +1,2 @@
+vhdl work "inv32.vhf"
+vhdl work "tb_inv32.vhw"

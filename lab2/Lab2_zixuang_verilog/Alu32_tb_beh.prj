@@ -1,0 +1,3 @@
+verilog work "Alu32.v"
+verilog work "Alu32_tb.v"
+verilog work "C:/Xilinx/10.1/ISE/verilog/src/glbl.v"

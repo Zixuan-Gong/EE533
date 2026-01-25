@@ -1,0 +1,3 @@
+MODULE tb_add8dff
+SUBMODULE add8dff
+INSTANCE UUT

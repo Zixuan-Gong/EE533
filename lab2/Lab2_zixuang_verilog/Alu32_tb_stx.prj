@@ -1,0 +1,3 @@
+verilog isim_temp "Alu32.v"
+verilog isim_temp "Alu32_tb.v"
+verilog isim_temp "C:/Xilinx/10.1/ISE/verilog/src/glbl.v"

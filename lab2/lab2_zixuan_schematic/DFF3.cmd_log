@@ -1,0 +1,3 @@
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF3.sch" DFF3.vhf
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF3.sch" DFF3.vhf
+sch2vhdl -intstyle ise -family virtex2p -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/DFF3.sch" DFF3.vhf

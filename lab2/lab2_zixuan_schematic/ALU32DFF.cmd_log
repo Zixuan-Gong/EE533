@@ -1,0 +1,9 @@
+xst -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -ifn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.xst" -ofn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.syr"
+ngdbuild -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xa2s50e-tq144-6 "ALU32DFF.ngc" ALU32DFF.ngd
+map -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -p xa2s50e-tq144-6 -cm area -pr off -k 4 -c 100 -tx off -o ALU32DFF_map.ncd ALU32DFF.ngd ALU32DFF.pcf
+sch2vhdl -intstyle ise -family virtex2p -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.sch" ALU32DFF.vhf
+xst -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -ifn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.xst" -ofn "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/ALU32DFF.syr"
+ngdbuild -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "ALU32DFF.ngc" ALU32DFF.ngd
+map -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o ALU32DFF_map.ncd ALU32DFF.ngd ALU32DFF.pcf
+par -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -w -intstyle ise -ol std -t 1 ALU32DFF_map.ncd ALU32DFF.ncd ALU32DFF.pcf
+trce -ise "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Lab2_zixuan/Lab2_zixuan.ise" -intstyle ise -e 3 -s 6 -xml ALU32DFF ALU32DFF.ncd -o ALU32DFF.twr ALU32DFF.pcf

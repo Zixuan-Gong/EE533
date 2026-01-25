@@ -1,0 +1,3 @@
+MODULE tb_add32dff
+SUBMODULE add32dff
+INSTANCE UUT

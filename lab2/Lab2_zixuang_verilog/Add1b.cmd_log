@@ -1,0 +1,6 @@
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Add1b.sch" Add1b.vf
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Add1b.sch" Add1b.vf
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Add1b.sch" Add1b.vf
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Add1b.sch" Add1b.vf
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Add1b.sch" Add1b.vf
+sch2vhdl -intstyle ise -family aspartan2e -flat -suppress -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/Add1b.sch" Add1b.vhf

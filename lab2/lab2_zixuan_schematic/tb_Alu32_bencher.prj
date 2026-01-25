@@ -1,0 +1,8 @@
+vhdl work "add_1b.vhf"
+vhdl work "add_8b.vhf"
+vhdl work "MUX_32b.vhf"
+vhdl work "inv32.vhf"
+vhdl work "buffer31.vhf"
+vhdl work "and_32bit.vhf"
+vhdl work "add32.vhf"
+vhdl work "Alu32_sch.vhf"

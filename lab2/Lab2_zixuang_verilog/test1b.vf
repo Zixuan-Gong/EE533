@@ -1,0 +1,41 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : test1b.vf
+// /___/   /\     Timestamp : 01/23/2026 16:01:21
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: C:\Xilinx\10.1\ISE\bin\nt\unwrapped\sch2verilog.exe -intstyle ise -family aspartan2e -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/test1b.sch" test1b.vf
+//Design Name: test1b
+//Device: aspartan2e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module test1b(A, 
+              B, 
+              C, 
+              Cout, 
+              S);
+
+    input A;
+    input B;
+    input C;
+   output Cout;
+   output S;
+   
+   
+   Add1b XLXI_1 (.A(A), 
+                 .B(B), 
+                 .C(C), 
+                 .Cout(Cout), 
+                 .S(S));
+endmodule

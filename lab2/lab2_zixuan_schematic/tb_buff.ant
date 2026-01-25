@@ -1,0 +1,102 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 10.1
+--  \   \         Application : ISE
+--  /   /         Filename : tb_buff.ant
+-- /___/   /\     Timestamp : Fri Jan 23 22:17:33 2026
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: tb_buff
+--Device: Xilinx
+--
+
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY tb_buff IS
+END tb_buff;
+
+ARCHITECTURE testbench_arch OF tb_buff IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "C:\Documents and Settings\student\Desktop\Lab2_zixuang\Lab2_zixuan\tb_buff.ano";
+
+    COMPONENT buffer31
+        PORT (
+            Bi : In std_logic_vector (30 DownTo 0);
+            Bo : Out std_logic_vector (30 DownTo 0)
+        );
+    END COMPONENT;
+
+    SIGNAL Bi : std_logic_vector (30 DownTo 0) := "0000000000000000000000000000000";
+    SIGNAL Bo : std_logic_vector (30 DownTo 0) := "0000000000000000000000000000000";
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    BEGIN
+        UUT : buffer31
+        PORT MAP (
+            Bi => Bi,
+            Bo => Bo
+        );
+
+        PROCESS    -- Annotation process
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_Bo(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", Bo, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, Bo);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_Bo(0);
+            ANNO_LOOP : LOOP
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+                ANNOTATE_Bo(TX_TIME);
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  100ns
+                WAIT FOR 100 ns;
+                Bi <= "1111111111111111111111111111111";
+                -- -------------------------------------
+                WAIT FOR 900 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+

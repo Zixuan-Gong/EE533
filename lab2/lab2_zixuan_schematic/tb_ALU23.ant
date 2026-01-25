@@ -1,0 +1,153 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 10.1
+--  \   \         Application : ISE
+--  /   /         Filename : tb_ALU23.ant
+-- /___/   /\     Timestamp : Fri Jan 23 21:36:02 2026
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: tb_ALU23
+--Device: Xilinx
+--
+
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY tb_ALU23 IS
+END tb_ALU23;
+
+ARCHITECTURE testbench_arch OF tb_ALU23 IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "C:\Documents and Settings\student\Desktop\Lab2_zixuang\Lab2_zixuan\tb_ALU23.ano";
+
+    COMPONENT Alu32_sch
+        PORT (
+            A : In std_logic_vector (31 DownTo 0);
+            B : In std_logic_vector (31 DownTo 0);
+            OP : In std_logic_vector (2 DownTo 0);
+            bi : Out std_logic_vector (31 DownTo 0);
+            bo : Out std_logic_vector (31 DownTo 0);
+            Rout : Out std_logic_vector (31 DownTo 0)
+        );
+    END COMPONENT;
+
+    SIGNAL A : std_logic_vector (31 DownTo 0) := "00000000000000000000000000000000";
+    SIGNAL B : std_logic_vector (31 DownTo 0) := "00000000000000000000000000000000";
+    SIGNAL OP : std_logic_vector (2 DownTo 0) := "000";
+    SIGNAL bi : std_logic_vector (31 DownTo 0) := "00000000000000000000000000000000";
+    SIGNAL bo : std_logic_vector (31 DownTo 0) := "00000000000000000000000000000000";
+    SIGNAL Rout : std_logic_vector (31 DownTo 0) := "00000000000000000000000000000000";
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    BEGIN
+        UUT : Alu32_sch
+        PORT MAP (
+            A => A,
+            B => B,
+            OP => OP,
+            bi => bi,
+            bo => bo,
+            Rout => Rout
+        );
+
+        PROCESS    -- Annotation process
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_bi(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", bi, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, bi);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_bo(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", bo, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, bo);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_Rout(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", Rout, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, Rout);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_bi(0);
+            ANNOTATE_bo(0);
+            ANNOTATE_Rout(0);
+            ANNO_LOOP : LOOP
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+                ANNOTATE_bi(TX_TIME);
+                ANNOTATE_bo(TX_TIME);
+                ANNOTATE_Rout(TX_TIME);
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  100ns
+                WAIT FOR 100 ns;
+                A <= "11111111111111111111111111111111";
+                OP <= "010";
+                -- -------------------------------------
+                -- -------------  Current Time:  300ns
+                WAIT FOR 200 ns;
+                OP <= "011";
+                -- -------------------------------------
+                WAIT FOR 700 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+

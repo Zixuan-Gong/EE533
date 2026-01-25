@@ -1,0 +1,2 @@
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/test1b.sch" test1b.vf
+sch2verilog -intstyle ise -family aspartan2e   -w "C:/Documents and Settings/student/Desktop/Lab2_zixuang/test1b.sch" test1b.vf
