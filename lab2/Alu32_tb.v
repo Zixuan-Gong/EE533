@@ -28,10 +28,11 @@ module Alu32_tb;
 	reg [31:0] a;
 	reg [31:0] b;
 	reg [2:0] op;
-
+	reg CLK=0;
+ 
 	// Outputs
 	wire [31:0] x;
-
+  
 	// Instantiate the Unit Under Test (UUT)
 	Alu32 uut (
 		.a(a), 
@@ -39,17 +40,18 @@ module Alu32_tb;
 		.op(op), 
 		.x(x)
 	);
-   
+   always #5 CLK=~CLK;
+	
 	task expcheck;
 	     input [2:0]  opi;
 		  input [31:0] ai;
 		  input [31:0] bi;
 		  reg   [31:0] exp;
-		  begin
+        begin
+		     @(posedge CLK);
 		     op = opi;
 			  a  = ai;
 			  b  = bi;
-			  #10;
 			  case (opi)
 			      3'b000: exp = ai + bi;
 					3'b001: exp = ai - bi;
@@ -60,8 +62,8 @@ module Alu32_tb;
 					3'b110: exp = (ai==bi) ? 32'd1 : 32'd0;					
 					default: exp = 32'd0;	
 			  endcase
-			  #90;
-			  if (x!=exp) 
+			  #1;
+			  if (x!==exp) 
 			      $display ("Error in case(op = %d): a = %h, b = %h, exp = %h, got = %h", opi, ai, bi, exp, x);
 			end	  
    endtask
@@ -138,4 +140,3 @@ module Alu32_tb;
 	end
       
 endmodule
-
